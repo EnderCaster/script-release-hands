@@ -1,0 +1,9 @@
+<?php
+$config=[
+    'digest_alg'=>"sha512",
+    'private_key_bits'=>4096,
+    'private_key_type'=>OPENSSL_KEYTYPE_RSA
+];
+$res=openssl_pkey_new($config);
+$private_key=openssl_pkey_export($res,$pkey);
+$public_key=openssl_pkey_get_details($res)['key'];
